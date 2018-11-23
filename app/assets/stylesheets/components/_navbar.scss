@@ -1,12 +1,15 @@
 /* Main navbar */
 .navbar-wagon {
-  background-color: transparent;
   transition: all 0.3s ease;
   height: 70px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.navbar-wagon-transparent {
+  background-color: transparent;
 }
 
 .navbar-wagon-white {
