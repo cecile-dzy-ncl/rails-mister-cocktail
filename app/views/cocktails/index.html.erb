@@ -9,17 +9,28 @@
     <li><i class="fas fa-utensils"></i></li>
   </ul>
 
-  <div>
-    <ul class="list-cocktails">
-      <% @cocktails.each do |cocktail| %>
-        <li><%= link_to "#{cocktail.name}", cocktail_path(cocktail.id) %></li>
-      <% end %>
-    </ul>
-  </div>
+    <div class="row">
 
-  <div class="card">
-    <%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-primary" %>
+      <% @cocktails.each do |cocktail| %>
+
+        <div class="col-xs-12 col-sm-4">
+
+          <% if cocktail.photo.present? %>
+
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>)">
+            </div>
+
+          <% else %>
+
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai')">
+            </div>
+
+          <% end %>
+
+          <div class="card-name"><%= cocktail.name %></div>
+          <%= link_to "", cocktail_path(cocktail), class: "card-link" %>
+        </div>
+      <% end %>
+    </div>
   </div>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet eos minus aut! Maiores architecto, dolores omnis tenetur unde neque accusamus vero rem aperiam, iste aut tempora. Tempore ipsa nostrum asperiores.</p>
-<p><%= 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet eos minus aut! Maiores architecto, dolores omnis tenetur unde neque accusamus vero rem aperiam, iste aut tempora. Tempore ipsa nostrum asperiores.'*50 %></p>
 </div>
