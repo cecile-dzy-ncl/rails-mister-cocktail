@@ -1,5 +1,5 @@
 .home-banner {
-  background-image: url('https://images.unsplash.com/photo-1519214605650-76a613ee3245?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=48c9c4148ba1f29e4de8f31ba9e4b568&auto=format&fit=crop&w=1649&q=80');
+  background-image: url('https://images.unsplash.com/photo-1509807995916-c332365e2d9e?ixlib=rb-0.3.5&s=ae69f4b1ad22f1c98410e2cb45159358&auto=format&fit=crop&w=2771&q=80');
   background-size: cover;
   height: 100vh;
   color: #eee;
@@ -9,4 +9,25 @@
 
 .banner {
   margin-top: 70px;
+}
+
+.button-banner {
+  display: inline-block;
+  box-sizing: content-box;
+  padding: 10px;
+  border: none;
+  font: normal 48px/normal 'Warnes', Helvetica, sans-serif;
+  color: rgba(255,255,255,1);
+  text-align: center;
+  text-overflow: clip;
+  cursor: pointer;
+  white-space: pre;
+  text-shadow: 0 0 40px rgba(220,135,44,1) , 0 0 10px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 90px rgba(220,135,44,1) , 0 0 30px rgba(220,135,44,1) , 0 0 60px rgba(220,135,44,1) , 0 0 70px rgba(220,135,44,1) ;
+  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.button-banner:hover {
+  box-sizing: border-box;
+  text-decoration: normal;
+  text-shadow: 0 0 10px rgba(220,135,44,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px rgba(220,135,44,1) , 0 0 60px rgba(220,135,44,1) , 0 0 70px rgba(220,135,44,1) , 0 0 90px rgba(220,135,44,1) ;
 }
