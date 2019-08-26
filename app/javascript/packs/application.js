@@ -14,9 +14,10 @@ import { initUpdateNavbarOnScroll } from '../components/navbar';
 // import { loadDynamicBannerText } from '../components/banner';
 // loadDynamicBannerText();
 import { graph } from '../components/linechart';
+import { graph2 } from '../components/linechart';
 
 initUpdateNavbarOnScroll();
 
-if(document.getElementById('myChart')){
- graph();
-}
+graph();
+graph2();
+
