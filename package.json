@@ -4,6 +4,7 @@
   "dependencies": {
     "@rails/webpacker": "3.5",
     "bootstrap": "3",
+    "chart.js": "^2.8.0",
     "chartjs": "^0.3.24",
     "jquery": "^3.3.1",
     "progressbar.js": "^1.0.1"
