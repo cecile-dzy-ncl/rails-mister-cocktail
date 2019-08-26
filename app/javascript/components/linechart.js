@@ -61,7 +61,7 @@ const graph = ()=> {
     data[count] = myData[count];
     myChart.update();
     if (count < myData.length) {
-      setTimeout(next, 150);
+      setTimeout(next, 120);
     }
   }
   setTimeout(next, 100);
@@ -77,11 +77,7 @@ const graph2 = ()=> {
   var gradient = ctx.createLinearGradient(0, 0, 0, 550);
   gradient.addColorStop(0, 'rgba(26,49,199,1)');
   gradient.addColorStop(1, 'rgba(26,49,199,0.1)');
-
-  var gradientFill = ctx.createLinearGradient(0, 0, 0, 550);
-  gradientFill.addColorStop(0, 'rgba(26,49,199,1)');
-  gradientFill.addColorStop(1, 'rgba(26,49,199,0.1)');
-    /***************/
+  /***************/
 
   var data = {
     labels: [0,1,2,3,4,5,6,7,8],
@@ -90,7 +86,8 @@ const graph2 = ()=> {
       borderColor: "rgba(26,49,199,1)",
       fill: true,
       lineTension: 0.15,
-      backgroundColor : gradient,
+      // backgroundColor : gradient,
+      backgroundColor : 'rgba(26,49,199,0.1)',
       pointRadius: 0, // supprimer si on veut faire apparaitre les points
       borderWidth: 2,
       borderJoinStyle: 'round',
@@ -112,17 +109,30 @@ const graph2 = ()=> {
       beforeRender: function(c, options) {
         var dataset = c.data.datasets[0];
         var yScale = c.scales['y-axis-0'];
-        var yPos = yScale.getPixelForValue(4);
+        var yPos = yScale.getPixelForValue(2);
         var posColour = 'rgba(249,0,66)';
-        var negColour = 'rgba(26,49,199)';
+        var negColour = 'rgba(26,49,199, 1)';
+        var posColourFill = 'rgba(249,0,66,1)';
+        var negColourFill = 'rgba(26,49,199,0.1)';
 
-        var gradientStroke = ctx.createLinearGradient(0, 0, 0, 900);
-        gradientStroke.addColorStop(0, "rgba(249,0,66)");
-        // gradientStroke.addColorStop(yPos / c.height, posColour);
-        // gradientStroke.addColorStop(yPos / c.height, negColour);
-        gradientStroke.addColorStop(1, "rgba(26,49,199)");
+        console.log(yPos);
+        // console.log(c.height);
+        // console.log(yPos / c.height);
+        // console.log(yPos / c.height - 0.01);
+
+        // var gradientFill = ctx.createLinearGradient(0, 0, 0, yPos);
+        // gradientFill.addColorStop(0, posColourFill);
+        // gradientFill.addColorStop(yPos / c.height, posColourFill);
+        // gradientFill.addColorStop(yPos / c.height , negColourFill);
+        // gradientFill.addColorStop(1, negColourFill);
+
+        var gradientStroke = ctx.createLinearGradient(0, 0, 0, yPos);
+        gradientStroke.addColorStop(0, posColour);
+        gradientStroke.addColorStop(yPos / c.height + 0.3, 'rgba(249,0,66,1)');
+        gradientStroke.addColorStop(1, negColour);
+
         var model = c.data.datasets[0]._meta[Object.keys(dataset._meta)[0]].$filler.el._model;
-
+        // model.backgroundColor = gradientFill;
         model.borderColor = gradientStroke;
 
       }
