@@ -1,43 +1,56 @@
-<div class="home-banner">
+<!-- <div class="home-banner">
   <div class="banner-content">
     <a href="#cocktails-list"><h1 class="button-banner">Mamie's Cocktails</h1></a>
   </div>
 </div>
-
+ -->
 <div class="container">
 
 
-  <div class="row" id="cocktails-list">
+  <!-- <div class="row" id="cocktails-list">
 
-    <% @cocktails.each do |cocktail| %>
+    <%# @cocktails.each do |cocktail| %>
 
     <div class="col-xs-12 col-sm-4">
 
-      <% if cocktail.photo.present? %>
+      <%# if cocktail.photo.present? %>
 
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>)">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%#= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>)">
         </div>
 
-        <% else %>
+        <%# else %>
 
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai')">
         </div>
 
-        <% end %>
+        <%# end %>
 
-        <div class="card-name"><%= cocktail.name %></div>
-        <%= link_to "", cocktail_path(cocktail), class: "card-link" %>
+        <div class="card-name"><%#= cocktail.name %></div>
+        <%#= link_to "", cocktail_path(cocktail), class: "card-link" %>
 
         </div>
 
-      <% end %>
-    </div>
+      <%# end %>
+    </div> -->
 
-    <div class="row" id="test chart">
-      <h2 style="margin: 20px; text-align: center;">ANIMATION HORIZONTALE</h2>
+    <div class="row" id="tests">
+      <h1>> TESTS <</h1>
+      <h2>CHART JS</h2>
+      <h2 style="margin: 20px; text-align: center;">Animation horizontale</h2>
       <canvas id="line-chart" width="700" height="400"></canvas>
-      <h2 style="margin: 20px; text-align: center;">ANIMATION VERTICALE</h2>
+      <h2 style="margin: 20px; text-align: center;">Changement de couleur au dessus d'une valeur</h2>
       <canvas id="line-chart-2" width="700" height="400"></canvas>
+      <hr>
+
+      <h2>Jeu AIDES</h2>
+      <div id="game">
+        <div class="left">
+          <%= image_tag "virus_sida.png", class: 'virus' %>
+        </div>
+        <div class="right">
+          <p class="amount">Montant collecté: <span class="sum"></span> €</p>
+        </div>
+      </div>
     </div>
 
   </div>

@@ -34,6 +34,9 @@ const graph = ()=> {
   var options = {
     responsive: true,
     showTooltips: false, // pour faire disparaitre les infobulles au hover
+    // animation: true,
+    animationEasing: "easeOutBack",
+    animationSteps: 60,
     scales: {
       xAxes: [{
         type: 'linear',
@@ -66,6 +69,8 @@ const graph = ()=> {
   }
   setTimeout(next, 100);
 
+  // Chart.defaults.global.animation.duration = 3000;
+
 };
 
 const graph2 = ()=> {
@@ -92,13 +97,14 @@ const graph2 = ()=> {
       borderWidth: 2,
       borderJoinStyle: 'round',
       cubicInterpolationMode: 'monotone',
-      easing: 'easeOutBack' // not working :((((
     }]
   };
 
   var options = {
     responsive: true,
-    showTooltips: false // pour faire disparaitre les infobulles au hover
+    showTooltips: false, // pour faire disparaitre les infobulles au hover
+    // animation: true,
+    animationEasing: 'easeOutBack'
   };
 
   var myChart = new Chart(ctx, {
@@ -139,6 +145,27 @@ const graph2 = ()=> {
     }]
   });
 
+  Chart.defaults.global.animation = {
+
+    // Boolean - Whether to animate the chart
+    animation: true,
+
+    // Number - Number of animation steps
+    animationSteps: 60,
+
+    // String - Animation easing effect
+    // Possible effects are:
+    // [easeInOutQuart, linear, easeOutBounce, easeInBack, easeInOutQuad,
+    //  easeOutQuart, easeOutQuad, easeInOutBounce, easeOutSine, easeInOutCubic,
+    //  easeInExpo, easeInOutBack, easeInCirc, easeInOutElastic, easeOutBack,
+    //  easeInQuad, easeInOutExpo, easeInQuart, easeOutQuint, easeInOutCirc,
+    //  easeInSine, easeOutExpo, easeOutCirc, easeOutCubic, easeInQuint,
+    //  easeInElastic, easeInOutSine, easeInOutQuint, easeInBounce,
+    //  easeOutElastic, easeInCubic]
+    animationEasing: "easeInOutBack"
+  };
+
+  Chart.defaults.global.animation.duration = 300;
 };
 
 export { graph };
