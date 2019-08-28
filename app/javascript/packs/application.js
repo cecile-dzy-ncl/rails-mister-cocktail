@@ -16,8 +16,11 @@ import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { graph } from '../components/linechart';
 import { graph2 } from '../components/linechart';
 
+import { game } from '../components/game';
+
 initUpdateNavbarOnScroll();
 
 graph();
 graph2();
+game();
 

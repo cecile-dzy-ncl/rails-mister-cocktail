@@ -9,8 +9,18 @@ hr {
 
 #game {
   width: 100%;
-  height: 100vh;
-  background: red;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .left {
+    width: 70%;
+  }
+
+  .right {
+    width: 30%;
+  }
 
   .virus {
     width: 80%;
